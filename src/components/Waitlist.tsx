@@ -3,14 +3,35 @@
 import Image from 'next/image';
 import { useState, type FormEvent } from 'react';
 
+const API_URL = 'https://gym-buddy-b725.onrender.com';
+
 export default function Waitlist() {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email.trim()) return;
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_URL}/api/waitlist`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.detail ?? 'Something went wrong. Please try again.');
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -73,10 +94,20 @@ export default function Waitlist() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  disabled={loading}
                 />
-                <button type="submit" className="btn btn-primary btn-lg waitlist-btn">
-                  Notify Me
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg waitlist-btn"
+                  disabled={loading}
+                >
+                  {loading ? 'Adding…' : 'Notify Me'}
                 </button>
+                {error && (
+                  <p style={{ color: 'rgba(255,100,100,0.9)', fontSize: 14, marginTop: 8 }}>
+                    {error}
+                  </p>
+                )}
               </form>
             )}
             <p className="waitlist-note">No spam. Unsubscribe anytime.</p>
