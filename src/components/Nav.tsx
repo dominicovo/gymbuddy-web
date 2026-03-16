@@ -1,10 +1,11 @@
+import Image from 'next/image';
+
 export default function Nav() {
   return (
     <nav className="nav" id="nav">
       <div className="nav-inner container">
         <a href="#" className="nav-logo">
-          <span className="logo-icon">💪</span>
-          <span className="logo-text">GymBuddy</span>
+          <Image src="/Gymbuddy-logo.png" alt="GymBuddy" height={36} width={160} style={{ objectFit: 'contain' }} priority />
         </a>
         <div className="nav-links">
           <a href="#how-it-works" className="nav-link">How it works</a>
