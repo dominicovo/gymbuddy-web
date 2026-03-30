@@ -4,7 +4,7 @@ const STEPS = [
   {
     number: '01',
     title: 'Pick Your Weaknesses',
-    desc: 'Select which apps get locked on your gym days — social media, games, streaming. Anything that keeps you on the couch.',
+    desc: 'Select which apps get locked on your gym days: social media, games, streaming. Anything that keeps you on the couch.',
     img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=460&fit=crop&q=80',
     imgAlt: 'Choose apps',
     imgLabel: 'Select from your installed apps',
@@ -14,7 +14,7 @@ const STEPS = [
   {
     number: '02',
     title: 'Set Your Schedule',
-    desc: 'Pick your gym days and lock window. Apps are blocked the moment that window opens — no sneaking in one last scroll.',
+    desc: 'Pick your gym days and lock window. Apps are blocked the moment that window opens. No sneaking in one last scroll.',
     img: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&h=460&fit=crop&q=80',
     imgAlt: 'Calendar schedule',
     imgLabel: 'Mon · Wed · Fri',
@@ -24,10 +24,10 @@ const STEPS = [
   {
     number: '03',
     title: 'Prove It & Unlock',
-    desc: 'Snap a photo at the gym. GymBuddy verifies your proof and instantly unlocks your apps. You earned it — every single time.',
+    desc: 'Snap a photo at the gym. GymBuddy verifies your proof and instantly unlocks your apps. You earned it, every single time.',
     img: 'https://images.unsplash.com/photo-1549476464-37392f717541?w=700&h=460&fit=crop&q=80',
     imgAlt: 'Workout proof',
-    imgLabel: 'Verified — apps unlocked',
+    imgLabel: 'Verified. Apps unlocked',
     labelIcon: (
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#30D158" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20 6 9 17 4 12" />

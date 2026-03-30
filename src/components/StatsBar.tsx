@@ -61,7 +61,7 @@ export default function StatsBar() {
         <div className="stat-divider" />
         <StatItem target={3} unit="x" label="more likely to show up when apps are at stake" />
         <div className="stat-divider" />
-        <StatItem target={0} unit="&nbsp;excuses" label="accepted — proof or no unlock" />
+        <StatItem target={0} unit="&nbsp;excuses" label="accepted. Proof or no unlock" />
       </div>
     </section>
   );

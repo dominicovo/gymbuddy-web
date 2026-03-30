@@ -31,7 +31,7 @@ export default function Features() {
               </div>
               <h3 className="feature-title">Real App Blocking</h3>
               <p className="feature-desc">
-                Powered by iOS Screen Time — the same system-level enforcement Apple uses for parental controls. There is no workaround.
+                Powered by iOS Screen Time, the same system-level enforcement Apple uses for parental controls. There is no workaround.
               </p>
               <div className="feature-tag">iOS Screen Time API</div>
             </div>
@@ -59,7 +59,7 @@ export default function Features() {
             </div>
             <h3 className="feature-title">Streak Tracking</h3>
             <p className="feature-desc">
-              Watch your consistency streak grow. Breaking it stings — and that&apos;s the entire point.
+              Watch your consistency streak grow. Breaking it stings, and that&apos;s the entire point.
             </p>
           </div>
 

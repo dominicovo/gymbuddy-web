@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'GymBuddy — Earn Your Freedom',
+  title: 'GymBuddy | Earn Your Freedom',
   description:
     'GymBuddy locks your most distracting apps until you prove you hit the gym. No excuses. Just results.',
 };
