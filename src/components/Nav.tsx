@@ -1,19 +1,21 @@
-import Image from 'next/image';
+import Logo from '@/components/Logo';
+import Link from 'next/link';
 
 export default function Nav() {
   return (
     <nav className="nav" id="nav">
       <div className="nav-inner container">
-        <a href="#" className="nav-logo">
-          <Image src="/Gymbuddy-logo.png" alt="GymBuddy" height={36} width={160} style={{ objectFit: 'contain' }} priority />
-        </a>
+        <Link href="/" className="nav-logo" aria-label="GymBuddy home">
+          <Logo />
+        </Link>
         <div className="nav-links">
-          <a href="#how-it-works" className="nav-link">How it works</a>
-          <a href="#features" className="nav-link">Features</a>
+          <Link href="/#how-it-works" className="nav-link">How it works</Link>
+          <Link href="/#buddies" className="nav-link">Buddies</Link>
+          <Link href="/#faq" className="nav-link">FAQ</Link>
         </div>
-        <a href="#waitlist" className="btn btn-primary btn-sm nav-cta">
+        <Link href="/#waitlist" className="btn btn-primary btn-sm nav-cta">
           Get Early Access
-        </a>
+        </Link>
       </div>
     </nav>
   );

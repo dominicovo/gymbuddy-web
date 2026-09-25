@@ -1,0 +1,111 @@
+/* Built on the landing page's tokens in globals.css (--primary, --surface, --r-*). */
+.page {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 32px 28px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.logo {
+  display: inline-flex;
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: clamp(30px, 7vw, 38px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+
+.lede {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.codeLabel {
+  margin: 28px 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.code {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.digit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 0.85;
+  border-radius: var(--r-md);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  font-family: var(--font-numeric), var(--font);
+  font-size: clamp(48px, 14vw, 68px);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.cta {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+.hint {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.hint strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  margin: 28px 0 4px;
+  background: var(--border-light);
+}
+
+.noApp {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.noApp + .cta {
+  margin-top: 12px;
+}

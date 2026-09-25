@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Icon from '@/components/Icon';
 
 export default function Testimonials() {
   return (
@@ -12,20 +12,13 @@ export default function Testimonials() {
 
           {/* Featured */}
           <div className="testi-card testi-card--featured">
-            <div className="testi-img-wrap">
-              <Image
-                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&h=400&fit=crop&q=80"
-                alt="Tester"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
+            <span className="testi-quote-mark"><Icon name="quote" size={28} /></span>
             <blockquote className="testi-quote">
               &ldquo;The only fitness app that actually stops me from reaching for Instagram when I
               should be reaching for the barbell. Been consistent for 3 months straight.&rdquo;
             </blockquote>
             <div className="testi-author">
-              <div className="testi-avatar" style={{ background: '#FF6B35' }}>A</div>
+              <div className="testi-avatar" style={{ background: '#8B84F0' }}>A</div>
               <div>
                 <p className="testi-name">Alpha Tester</p>
                 <p className="testi-role">🔥 89-day streak</p>
@@ -42,7 +35,7 @@ export default function Testimonials() {
                 week because I literally couldn&rsquo;t open Twitter.&rdquo;
               </blockquote>
               <div className="testi-author">
-                <div className="testi-avatar" style={{ background: '#0A84FF' }}>M</div>
+                <div className="testi-avatar" style={{ background: '#4FC3B5' }}>M</div>
                 <div>
                   <p className="testi-name">Michael R.</p>
                   <p className="testi-role">🔥 28-day streak</p>
@@ -56,7 +49,7 @@ export default function Testimonials() {
                 screen time didn&rsquo;t.&rdquo;
               </blockquote>
               <div className="testi-author">
-                <div className="testi-avatar" style={{ background: '#30D158' }}>J</div>
+                <div className="testi-avatar" style={{ background: '#5FD08F' }}>J</div>
                 <div>
                   <p className="testi-name">Jordan K.</p>
                   <p className="testi-role">🔥 31-day streak</p>

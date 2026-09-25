@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://gymbuddy.app/sitemap.xml',
-    host: 'https://gymbuddy.app',
+    sitemap: 'https://www.gymbuddy.live/sitemap.xml',
+    host: 'https://www.gymbuddy.live',
   };
 }

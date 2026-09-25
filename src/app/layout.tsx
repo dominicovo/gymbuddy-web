@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Barlow_Condensed, Inter } from 'next/font/google';
 import './globals.css';
 import AnimationProvider from '@/components/AnimationProvider';
 
@@ -9,7 +9,16 @@ const inter = Inter({
   display: 'swap',
 });
 
-const APP_URL = 'https://gymbuddy.app';
+// The iOS app's numeral face (countdowns, streaks, pair codes) — used here for big numbers only.
+const numerals = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  display: 'swap',
+  variable: '--font-numeric',
+});
+
+// www is the canonical host — the bare domain redirects to it.
+const APP_URL = 'https://www.gymbuddy.live';
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
@@ -73,7 +82,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
   verification: {
     google: 'google-site-verification-placeholder',
@@ -120,7 +129,7 @@ const jsonLd = {
         url: APP_URL,
         logo: {
           '@type': 'ImageObject',
-          url: `${APP_URL}/Gymbuddy-logo.png`,
+          url: `${APP_URL}/gymbuddy-icon.png`,
         },
       },
     },
@@ -131,7 +140,7 @@ const jsonLd = {
       url: APP_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${APP_URL}/Gymbuddy-logo.png`,
+        url: `${APP_URL}/gymbuddy-icon.png`,
         width: 512,
         height: 512,
       },
@@ -153,7 +162,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${numerals.variable}`}>
         {children}
         <AnimationProvider />
       </body>

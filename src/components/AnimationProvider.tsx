@@ -25,8 +25,9 @@ export default function AnimationProvider() {
     );
 
     const targets = document.querySelectorAll<HTMLElement>(
-      '.hero-badge, .hero-title, .hero-subtitle, .hero-actions, .hero-social-proof, .hero-collage, ' +
-        '.stat-item, .how-step, .feature-card, .testi-card, .waitlist-card'
+      '.hero-badge, .hero-title, .hero-subtitle, .hero-actions, .hero-social-proof, .hero-visual, ' +
+        '.stat-item, .how-step, .feature-card, .testi-card, .waitlist-card, ' +
+        '.phone, .day-item, .buddies-point, .pair-card, .compare-wrap, .faq-item'
     );
     targets.forEach((el, i) => {
       el.classList.add('fade-up');
@@ -37,23 +38,21 @@ export default function AnimationProvider() {
     // Smooth scroll for anchor links
     const handleAnchorClick = (e: Event) => {
       const link = e.currentTarget as HTMLAnchorElement;
-      const id = link.getAttribute('href');
-      if (!id || !id.startsWith('#')) return;
+      const href = link.getAttribute('href') ?? '';
+      const id = href.startsWith('/#') && window.location.pathname === '/' ? href.slice(1) : href;
+      if (!id.startsWith('#')) return;
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
-    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
-      link.addEventListener('click', handleAnchorClick);
-    });
+    const anchors = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[href^="/#"]');
+    anchors.forEach((link) => link.addEventListener('click', handleAnchorClick));
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
-      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
-        link.removeEventListener('click', handleAnchorClick);
-      });
+      anchors.forEach((link) => link.removeEventListener('click', handleAnchorClick));
     };
   }, []);
 

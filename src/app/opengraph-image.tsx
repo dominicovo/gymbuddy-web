@@ -6,6 +6,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
+  // The GYMBUDDY wordmark, inlined for the edge renderer.
+  const logo = await fetch(new URL('../../public/gymbuddy-wordmark.png', import.meta.url)).then((r) => r.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -16,55 +19,12 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0A0A0A',
+          background: '#08070C',
           position: 'relative',
           overflow: 'hidden',
           fontFamily: 'sans-serif',
         }}
       >
-        {/* Background gradient blobs */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-80px',
-            left: '-80px',
-            width: '500px',
-            height: '500px',
-            borderRadius: '50%',
-            background:
-              'radial-gradient(circle, rgba(255,107,53,0.35) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-            display: 'flex',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-100px',
-            right: '-80px',
-            width: '520px',
-            height: '520px',
-            borderRadius: '50%',
-            background:
-              'radial-gradient(circle, rgba(191,90,242,0.35) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-            display: 'flex',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '55%',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            background:
-              'radial-gradient(circle, rgba(10,132,255,0.20) 0%, transparent 70%)',
-            filter: 'blur(50px)',
-            display: 'flex',
-          }}
-        />
 
         {/* Badge */}
         <div
@@ -72,8 +32,8 @@ export default async function Image() {
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            background: 'rgba(255,107,53,0.12)',
-            border: '1px solid rgba(255,107,53,0.35)',
+            background: 'rgba(139,132,240,0.12)',
+            border: '1px solid rgba(139,132,240,0.35)',
             borderRadius: '100px',
             padding: '8px 20px',
             marginBottom: '32px',
@@ -84,11 +44,11 @@ export default async function Image() {
               width: '8px',
               height: '8px',
               borderRadius: '50%',
-              background: '#FF6B35',
+              background: '#8B84F0',
               display: 'flex',
             }}
           />
-          <span style={{ color: '#FF6B35', fontSize: '18px', fontWeight: 600 }}>
+          <span style={{ color: '#8B84F0', fontSize: '18px', fontWeight: 600 }}>
             Coming to the App Store
           </span>
         </div>
@@ -106,7 +66,7 @@ export default async function Image() {
             style={{
               fontSize: '80px',
               fontWeight: 900,
-              color: '#FFFFFF',
+              color: '#F6F5FA',
               lineHeight: 1.1,
               textAlign: 'center',
             }}
@@ -119,9 +79,7 @@ export default async function Image() {
               fontWeight: 900,
               lineHeight: 1.1,
               textAlign: 'center',
-              background: 'linear-gradient(135deg, #FF6B35 0%, #BF5AF2 50%, #0A84FF 100%)',
-              backgroundClip: 'text',
-              color: 'transparent',
+              color: '#8B84F0',
             }}
           >
             Earn Your Freedom.
@@ -153,21 +111,9 @@ export default async function Image() {
             gap: '12px',
           }}
         >
-          <div
-            style={{
-              width: '36px',
-              height: '36px',
-              borderRadius: '8px',
-              background: 'linear-gradient(135deg, #FF6B35, #BF5AF2)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <span style={{ color: '#fff', fontSize: '20px', fontWeight: 900 }}>G</span>
-          </div>
-          <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '20px', fontWeight: 600 }}>
-            gymbuddy.app
+          <img src={logo as unknown as string} alt="" width={193} height={22} />
+          <span style={{ color: 'rgba(255,255,255,0.62)', fontSize: '20px', fontWeight: 600 }}>
+            gymbuddy.live
           </span>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const APP_URL = 'https://gymbuddy.app';
+  const APP_URL = 'https://www.gymbuddy.live';
   const lastModified = new Date();
 
   return [
