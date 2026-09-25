@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import { useState, type FormEvent } from 'react';
 
-const API_URL = 'https://gym-buddy-b725.onrender.com';
-
 export default function Waitlist() {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
@@ -17,7 +15,7 @@ export default function Waitlist() {
     setError(null);
     setLoading(true);
     try {
-      const res = await fetch(`${API_URL}/api/waitlist`, {
+      const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim() }),
@@ -68,8 +66,8 @@ export default function Waitlist() {
                     width: 60,
                     height: 60,
                     borderRadius: '50%',
-                    background: 'rgba(48,209,88,0.14)',
-                    border: '1px solid rgba(48,209,88,0.30)',
+                    background: 'rgba(95,208,143,0.14)',
+                    border: '1px solid rgba(95,208,143,0.30)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -104,7 +102,7 @@ export default function Waitlist() {
                   {loading ? 'Adding…' : 'Notify Me'}
                 </button>
                 {error && (
-                  <p style={{ color: 'rgba(255,100,100,0.9)', fontSize: 14, marginTop: 8 }}>
+                  <p style={{ color: 'rgba(232,119,110,1)', fontSize: 14, marginTop: 8 }}>
                     {error}
                   </p>
                 )}
