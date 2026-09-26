@@ -1,4 +1,5 @@
-import Icon from '@/components/Icon';
+import { ChainedAppsIllustration } from '@/components/Illustrations';
+import Sticker from '@/components/Sticker';
 
 export default function Features() {
   return (
@@ -15,8 +16,9 @@ export default function Features() {
 
           {/* Hero card: what you actually see when you open a locked app */}
           <div className="feature-card feature-card--hero feature-card--shield">
+            <Sticker tilt={6} className="shield-sticker">No snooze!</Sticker>
             <div className="shield-mock" aria-hidden>
-              <span className="shield-mock-icon"><Icon name="lock" size={30} /></span>
+              <div className="shield-mock-illo"><ChainedAppsIllustration /></div>
               <p className="shield-mock-title">Instagram is locked</p>
               <p className="shield-mock-sub">It&rsquo;s a gym day. Check in at Iron Works Gym to unlock.</p>
               <span className="shield-mock-button">Open GymBuddy</span>

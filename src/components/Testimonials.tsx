@@ -1,4 +1,5 @@
 import Icon from '@/components/Icon';
+import { Flame } from '@/components/Illustrations';
 
 export default function Testimonials() {
   return (
@@ -21,7 +22,7 @@ export default function Testimonials() {
               <div className="testi-avatar" style={{ background: '#8B84F0' }}>A</div>
               <div>
                 <p className="testi-name">Alpha Tester</p>
-                <p className="testi-role">🔥 89-day streak</p>
+                <p className="testi-role"><Flame size={14} /> 89-day streak</p>
               </div>
             </div>
           </div>
@@ -38,7 +39,7 @@ export default function Testimonials() {
                 <div className="testi-avatar" style={{ background: '#4FC3B5' }}>M</div>
                 <div>
                   <p className="testi-name">Michael R.</p>
-                  <p className="testi-role">🔥 28-day streak</p>
+                  <p className="testi-role"><Flame size={14} /> 28-day streak</p>
                 </div>
               </div>
             </div>
@@ -52,7 +53,7 @@ export default function Testimonials() {
                 <div className="testi-avatar" style={{ background: '#5FD08F' }}>J</div>
                 <div>
                   <p className="testi-name">Jordan K.</p>
-                  <p className="testi-role">🔥 31-day streak</p>
+                  <p className="testi-role"><Flame size={14} /> 31-day streak</p>
                 </div>
               </div>
             </div>

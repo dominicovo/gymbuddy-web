@@ -1,3 +1,6 @@
+import Icon from '@/components/Icon';
+import Sticker from '@/components/Sticker';
+
 const POINTS = [
   { title: 'Pair with four digits', body: 'Share your pair link or read out your code. Your buddy taps it and you’re connected.' },
   { title: 'See who made it in', body: 'Every buddy, sorted into “still to go”, “checked in” and “rest day” — with their streak next to their name.' },
@@ -16,9 +19,9 @@ export default function Buddies() {
             your streak. Never your apps, and never where you are.
           </p>
           <ul className="buddies-points">
-            {POINTS.map((p) => (
+            {POINTS.map((p, i) => (
               <li key={p.title} className="buddies-point">
-                <span className="buddies-tick" aria-hidden>✓</span>
+                <span className={`buddies-num buddies-num--${i} num`} aria-hidden>{i + 1}</span>
                 <div>
                   <p className="buddies-point-title">{p.title}</p>
                   <p className="buddies-point-body">{p.body}</p>
@@ -29,10 +32,12 @@ export default function Buddies() {
         </div>
 
         <div className="pair-card" aria-label="Example pair card">
+          <Sticker tone="green" tilt={4} className="pair-sticker">Accountability buddies</Sticker>
+          <span className="pair-heart" aria-hidden><Icon name="heart" size={22} fill="#fff" color="#fff" /></span>
           <div className="pair-card-top">
             <span className="pair-avatar">DE</span>
             <div>
-              <p className="pair-name">Dominic E.</p>
+              <p className="pair-name">James Doe</p>
               <p className="pair-meta">Trains Mon · Wed · Fri</p>
             </div>
           </div>
@@ -43,8 +48,8 @@ export default function Buddies() {
             ))}
           </div>
           <div className="pair-inbox">
-            <p className="pair-inbox-row"><span className="pair-mini pair-mini--a">MC</span> Maya cheered your check-in <span aria-hidden>✋</span></p>
-            <p className="pair-inbox-row"><span className="pair-mini pair-mini--b">JO</span> Jordan nudged you — time to go <span aria-hidden>📣</span></p>
+            <p className="pair-inbox-row"><span className="pair-mini pair-mini--a"><Icon name="star" size={14} fill="currentColor" /></span> <span><b>Maya</b> cheered your check-in</span></p>
+            <p className="pair-inbox-row"><span className="pair-mini pair-mini--b"><Icon name="megaphone" size={14} /></span> <span><b>Jordan</b> nudged you: time to go</span></p>
           </div>
         </div>
       </div>

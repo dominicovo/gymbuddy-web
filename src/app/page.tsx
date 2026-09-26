@@ -1,5 +1,8 @@
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
+import Problem from '@/components/Problem';
+import InsideApp from '@/components/InsideApp';
+import CheckIn from '@/components/CheckIn';
 import StatsBar from '@/components/StatsBar';
 import HowItWorks from '@/components/HowItWorks';
 import Features from '@/components/Features';
@@ -17,9 +20,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Problem />
         <StatsBar />
         <HowItWorks />
         <DayTimeline />
+        <InsideApp />
+        <CheckIn />
         <Features />
         <Buddies />
         <Comparison />

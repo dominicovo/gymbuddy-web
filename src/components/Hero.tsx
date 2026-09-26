@@ -1,6 +1,4 @@
-import Icon from '@/components/Icon';
-import PhoneFrame from '@/components/PhoneFrame';
-import TodayScreen from '@/components/TodayScreen';
+import { HeroIllustration } from '@/components/Illustrations';
 
 export default function Hero() {
   return (
@@ -42,25 +40,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: the app itself — the Today screen while apps are locked */}
+        {/* Right: the deck's hero illustration */}
         <div className="hero-visual">
-          <PhoneFrame label="GymBuddy's Today screen with apps locked" showCaption={false}>
-            <TodayScreen />
-          </PhoneFrame>
-          <div className="hero-tag hero-tag--lock">
-            <span className="hero-tag-icon hero-tag-icon--accent"><Icon name="lock" size={16} /></span>
-            <div>
-              <p className="fl-title">Apps locked</p>
-              <p className="fl-sub">Instagram, TikTok + 3 more</p>
-            </div>
-          </div>
-          <div className="hero-tag hero-tag--proof">
-            <span className="hero-tag-icon hero-tag-icon--ok"><Icon name="check" size={16} strokeWidth={2.6} /></span>
-            <div>
-              <p className="fl-title">Proof submitted</p>
-              <p className="fl-sub">Iron Works Gym · 7:12 AM</p>
-            </div>
-          </div>
+          <HeroIllustration />
         </div>
       </div>
     </section>

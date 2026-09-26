@@ -1,3 +1,6 @@
+import Icon from '@/components/Icon';
+import { Flame } from '@/components/Illustrations';
+
 // GymBuddy's Today screen while apps are locked, redrawn from the iOS app for the hero.
 export default function TodayScreen() {
   return (
@@ -5,11 +8,11 @@ export default function TodayScreen() {
       <p className="ps-eyebrow">WEDNESDAY 24 SEP</p>
       <div className="ps-row ps-between">
         <p className="ps-title">Today</p>
-        <span className="ps-streak">🔥 <b className="num">8</b></span>
+        <span className="ps-streak"><Flame size={13} /> <b className="num">8</b> DAYS</span>
       </div>
       <div className="ps-card ps-card--locked">
         <div className="ps-row ps-between">
-          <span className="ps-chip ps-chip--accent">🔒 APPS LOCKED</span>
+          <span className="ps-chip ps-chip--accent"><Icon name="lock" size={9} strokeWidth={2.6} /> APPS LOCKED</span>
           <span className="ps-muted ps-small">6:00 – 8:00 PM</span>
         </div>
         <p className="num ps-big">1:42</p>

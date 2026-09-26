@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, type FormEvent } from 'react';
+import { Confetti, DumbbellFlameIllustration } from '@/components/Illustrations';
 
 export default function Waitlist() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,14 +36,7 @@ export default function Waitlist() {
     <section className="waitlist section" id="waitlist">
       <div className="container">
         <div className="waitlist-card">
-          <Image
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&h=600&fit=crop&q=70"
-            alt=""
-            fill
-            className="waitlist-bg-img"
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="waitlist-bg-overlay" />
+          <div className="waitlist-confetti"><Confetti /></div>
           <div className="waitlist-inner">
             <p className="section-label" style={{ textAlign: 'center' }}>Early Access</p>
             <h2 className="waitlist-title">Be first to hold yourself accountable</h2>
@@ -109,6 +102,7 @@ export default function Waitlist() {
               </form>
             )}
             <p className="waitlist-note">No spam. Unsubscribe anytime.</p>
+            <div className="waitlist-dumbbell"><DumbbellFlameIllustration /></div>
           </div>
         </div>
       </div>
