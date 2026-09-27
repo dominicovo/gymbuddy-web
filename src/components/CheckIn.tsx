@@ -1,5 +1,4 @@
 import Icon from '@/components/Icon';
-import { GeofenceIllustration } from '@/components/Illustrations';
 
 export default function CheckIn() {
   return (
@@ -10,18 +9,18 @@ export default function CheckIn() {
         <div className="checkin-grid">
           <div className="checkin-steps">
             <div className="how-proof-row">
-              <span className="how-proof-icon"><Icon name="pin" size={18} /></span>
+              <span className="how-proof-icon how-proof-icon--accent"><Icon name="camera" size={18} /></span>
               <div>
-                <p className="how-proof-title">You&rsquo;re at the gym</p>
-                <p className="how-proof-sub">Iron Works Gym · 42 m away</p>
+                <p className="how-proof-title">Gym photo taken</p>
+                <p className="how-proof-sub">The rack, the weights, the view from the treadmill</p>
               </div>
               <span className="how-proof-check"><Icon name="check" size={14} strokeWidth={2.8} /></span>
             </div>
             <div className="how-proof-row">
-              <span className="how-proof-icon how-proof-icon--accent"><Icon name="camera" size={18} /></span>
+              <span className="how-proof-icon"><Icon name="lock" size={18} /></span>
               <div>
-                <p className="how-proof-title">Gym photo taken</p>
-                <p className="how-proof-sub">Stays on your phone</p>
+                <p className="how-proof-title">Looks like a gym</p>
+                <p className="how-proof-sub">Checked on your phone · never uploaded</p>
               </div>
               <span className="how-proof-check"><Icon name="check" size={14} strokeWidth={2.8} /></span>
             </div>
@@ -30,11 +29,10 @@ export default function CheckIn() {
             </div>
           </div>
           <div className="checkin-map">
-            <GeofenceIllustration />
-            <p className="checkin-big num">150 m</p>
+            <p className="checkin-big num">0 uploads</p>
             <p className="checkin-text">
-              GymBuddy checks you&rsquo;re within 150 metres of your chosen gym, then asks for a photo. Location first,
-              photo second.
+              Apple&rsquo;s on-device image recognition checks your photo looks like a gym. The photo never leaves your
+              phone, and a photo of a screen doesn&rsquo;t count.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { SunArcIllustration } from '@/components/Illustrations';
 const MOMENTS: { time: string; title: string; body: string; icon: IconName; tone: string }[] = [
   { time: '6:00 AM', title: 'Your window opens', body: 'It’s a gym day. A 15-minute grace period gives you time to get out the door.', icon: 'sunrise', tone: 'plain' },
   { time: '6:15 AM', title: 'Apps lock', body: 'Instagram, TikTok and the rest go behind a GymBuddy screen. No snooze button.', icon: 'lock', tone: 'primary' },
-  { time: '7:12 AM', title: 'You check in', body: 'Within 150 m of your gym, open GymBuddy and snap a photo.', icon: 'pin', tone: 'plain' },
+  { time: '7:12 AM', title: 'You check in', body: 'At the gym, open GymBuddy and snap a photo of the kit around you.', icon: 'pin', tone: 'plain' },
   { time: '7:12 AM', title: 'Everything unlocks', body: 'Apps open for the rest of the day. Your streak ticks to 9, and buddies see “In at 7:12 AM”.', icon: 'unlock', tone: 'ok' },
   { time: '8:00 PM', title: 'Or the window closes', body: 'Skipped it? Apps unlock anyway so nobody gets stranded, but the streak starts over.', icon: 'moon', tone: 'warn' },
 ];

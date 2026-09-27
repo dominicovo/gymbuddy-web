@@ -11,7 +11,7 @@ import { HeroIllustration } from '@/components/Illustrations';
 const POINTS: { icon: IconName; tone: string; text: string }[] = [
   { icon: 'lock', tone: 'primary', text: 'Real, system-level app blocking' },
   { icon: 'clock', tone: 'amber', text: 'Only on your gym days, inside your window' },
-  { icon: 'pin', tone: 'green', text: 'Unlocked when you check in at your gym' },
+  { icon: 'camera', tone: 'green', text: 'Unlocked with a photo check-in at the gym' },
 ];
 
 export default function Home() {
@@ -50,6 +50,7 @@ export default function Home() {
 
       <footer className="container launch-footer">
         <span>&copy; 2026 GymBuddy</span>
+        <Link href="/support">Support</Link>
         <Link href="/privacy">Privacy</Link>
         <a href="mailto:hello@gymbuddy.live">hello@gymbuddy.live</a>
       </footer>

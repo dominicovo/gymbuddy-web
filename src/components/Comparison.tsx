@@ -1,6 +1,6 @@
 const ROWS: { label: string; screenTime: string; gymbuddy: string }[] = [
   { label: 'Getting past the lock', screenTime: 'Tap “Ignore limit”', gymbuddy: 'Be at your gym' },
-  { label: 'What unlocks it', screenTime: 'Waiting it out', gymbuddy: 'A photo from inside 150 m of your gym' },
+  { label: 'What unlocks it', screenTime: 'Waiting it out', gymbuddy: 'A photo taken at the gym' },
   { label: 'Knows your gym days', screenTime: 'No', gymbuddy: 'Yes — and rest days stay unlocked' },
   { label: 'Streaks and history', screenTime: 'No', gymbuddy: 'Streak, best streak, 12-week grid' },
   { label: 'Someone in your corner', screenTime: 'No', gymbuddy: 'Buddies who see if you showed up' },

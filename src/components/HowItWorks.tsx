@@ -19,7 +19,7 @@ const STEPS: { number: string; title: string; desc: string; visual: ReactNode; t
   {
     number: '03',
     title: 'Prove it and unlock',
-    desc: 'Be within 150 m of your gym, snap a photo, and everything opens for the rest of the day.',
+    desc: 'Snap a photo at the gym. Your phone checks it looks like one, and everything opens for the rest of the day.',
     visual: <PinCameraIllustration />,
     tone: 'green',
   },

@@ -9,11 +9,11 @@ const FAQS = [
   },
   {
     q: 'Can I get my apps back without going?',
-    a: 'Not while the window is open. Unlocking takes a check-in from within 150 m of your gym. The 15-minute grace period at the start gives you time to get out the door.',
+    a: 'Not while the window is open. Unlocking takes a photo check-in at the gym. The 15-minute grace period at the start gives you time to get out the door.',
   },
   {
     q: 'Can’t I just cheat?',
-    a: 'GymBuddy isn’t a lie detector — it’s built so that going is easier than getting around it. It checks your location against your gym and asks for a photo, and your buddies see when you check in.',
+    a: 'GymBuddy isn’t a lie detector — it’s built so that going is easier than getting around it. It asks for a photo that your phone checks looks like a gym, and your buddies see when you check in.',
   },
   {
     q: 'Which apps can I lock?',

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/privacy' },
 };
 
-const UPDATED = '24 September 2026';
+const UPDATED = '27 September 2026';
 
 const SEES = [
   'Your name, handle and — if you add one — your profile photo',
@@ -23,7 +23,7 @@ const SEES = [
 const NEVER = [
   'Which apps you locked — Apple keeps that list on your iPhone, even from us',
   'Your check-in photo — it never leaves your phone',
-  'Your location history — it’s checked against your gym on the phone, at the moment you check in',
+  'Your location — GymBuddy doesn’t use it',
   'Anything you do inside your other apps',
 ];
 
@@ -79,6 +79,12 @@ export default function PrivacyPage() {
           </p>
           <h3>Buddies</h3>
           <p>Who you&rsquo;ve paired with, pending requests, and the cheers and nudges you send and receive.</p>
+          <h3>Notifications</h3>
+          <p>
+            If you turn on notifications, we store your iPhone&rsquo;s push token, a random identifier Apple gives the
+            app, so we can tell you when a buddy nudges you, cheers you on or wants to pair up. Apple delivers them.
+            Signing out removes the token for that phone.
+          </p>
           <h3>The waitlist</h3>
           <p>If you join the waitlist on this site, we store your email address to tell you when GymBuddy launches.</p>
         </section>
@@ -91,11 +97,8 @@ export default function PrivacyPage() {
               for your selection — we can&rsquo;t read which apps or categories it contains.
             </li>
             <li>
-              <strong>Your check-in photo.</strong> It&rsquo;s taken to prove you&rsquo;re there and isn&rsquo;t uploaded.
-            </li>
-            <li>
-              <strong>Your location.</strong> When you check in, the app compares where you are with where your gym is, on
-              the phone. Only the result — that you checked in — is saved.
+              <strong>Your check-in photo.</strong> Apple&rsquo;s on-device image recognition checks that it looks like a
+              gym. The photo and that check both stay on your phone; only the fact that you checked in is saved.
             </li>
           </ul>
         </section>
@@ -104,7 +107,7 @@ export default function PrivacyPage() {
           <h2>Who helps us run GymBuddy</h2>
           <p>
             Your account, profile, check-ins and buddies are stored with Supabase, our database and sign-in provider.
-            Apple and Google handle sign-in. This website is hosted by Vercel. We don&rsquo;t sell your data, and we
+            Apple and Google handle sign-in, and Apple delivers notifications. This website is hosted by Vercel. We don&rsquo;t sell your data, and we
             don&rsquo;t use it for advertising.
           </p>
         </section>
@@ -113,7 +116,8 @@ export default function PrivacyPage() {
           <h2>Deleting your data</h2>
           <p>
             In the app, go to <strong>Settings → Delete account</strong>. This permanently deletes your profile, photo,
-            buddy connections, check-ins and nudges. To remove your email from the waitlist, email us.
+            buddy connections, check-ins, nudges and notification tokens. To remove your email from the waitlist, email
+            us.
           </p>
         </section>
 
