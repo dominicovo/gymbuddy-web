@@ -30,7 +30,7 @@ const NEVER = [
 export default function PrivacyPage() {
   return (
     <>
-      <Nav />
+      <Nav minimal />
       <main className="legal container">
         <p className="section-label">Privacy policy</p>
         <h1 className="legal-title">Your apps get locked. Your data doesn&rsquo;t get shared.</h1>
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
           <h2>Changes and contact</h2>
           <p>
             If this policy changes, we&rsquo;ll update the date above. Questions? Email{' '}
-            <a href="mailto:hello@gymbuddy.app">hello@gymbuddy.app</a>.
+            <a href="mailto:hello@gymbuddy.live">hello@gymbuddy.live</a>.
           </p>
         </section>
       </main>

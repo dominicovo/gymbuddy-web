@@ -37,7 +37,7 @@ export default function Faq() {
           <p className="section-label">FAQ</p>
           <h2 className="section-title">Questions people ask</h2>
           <p className="section-subtitle">
-            Something else? <a href="mailto:hello@gymbuddy.app" className="faq-link">Email us</a>.
+            Something else? <a href="mailto:hello@gymbuddy.live" className="faq-link">Email us</a>.
           </p>
         </div>
         <div className="faq-list">

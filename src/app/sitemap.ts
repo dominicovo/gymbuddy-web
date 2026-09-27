@@ -12,22 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${APP_URL}/#how-it-works`,
+      url: `${APP_URL}/privacy`,
       lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${APP_URL}/#features`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${APP_URL}/#waitlist`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 }

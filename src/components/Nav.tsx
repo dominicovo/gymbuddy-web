@@ -10,7 +10,8 @@ const LINKS = [
   { href: '/#faq', label: 'FAQ' },
 ];
 
-export default function Nav() {
+/** `minimal`: logo and a link back to the early-access form, for pages outside the landing page. */
+export default function Nav({ minimal = false }: { minimal?: boolean }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -21,6 +22,19 @@ export default function Nav() {
   }, [open]);
 
   const close = () => setOpen(false);
+
+  if (minimal) {
+    return (
+      <nav className="nav" id="nav">
+        <div className="nav-inner container">
+          <Link href="/" className="nav-logo" aria-label="GymBuddy home">
+            <Logo />
+          </Link>
+          <Link href="/" className="btn btn-primary btn-sm">Get Early Access</Link>
+        </div>
+      </nav>
+    );
+  }
 
   // Open state lives in data-open, not className: AnimationProvider toggles
   // the "scrolled" class directly on this element.

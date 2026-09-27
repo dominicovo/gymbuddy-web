@@ -1,39 +1,58 @@
-import Nav from '@/components/Nav';
-import Hero from '@/components/Hero';
-import Problem from '@/components/Problem';
-import InsideApp from '@/components/InsideApp';
-import CheckIn from '@/components/CheckIn';
-import StatsBar from '@/components/StatsBar';
-import HowItWorks from '@/components/HowItWorks';
-import Features from '@/components/Features';
-import DayTimeline from '@/components/DayTimeline';
-import Buddies from '@/components/Buddies';
-import Comparison from '@/components/Comparison';
-import Faq from '@/components/Faq';
-import Testimonials from '@/components/Testimonials';
-import Waitlist from '@/components/Waitlist';
-import Footer from '@/components/Footer';
+import Link from 'next/link';
+import Icon, { type IconName } from '@/components/Icon';
+import Logo from '@/components/Logo';
+import WaitlistForm from '@/components/WaitlistForm';
+import { HeroIllustration } from '@/components/Illustrations';
+
+// Pre-launch: one screen with the early-access form. The full landing page
+// sections (Hero, HowItWorks, DayTimeline, Buddies, …) are still in
+// src/components for when we bring it back.
+
+const POINTS: { icon: IconName; tone: string; text: string }[] = [
+  { icon: 'lock', tone: 'primary', text: 'Real, system-level app blocking' },
+  { icon: 'clock', tone: 'amber', text: 'Only on your gym days, inside your window' },
+  { icon: 'pin', tone: 'green', text: 'Unlocked when you check in at your gym' },
+];
 
 export default function Home() {
   return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <Problem />
-        <StatsBar />
-        <HowItWorks />
-        <DayTimeline />
-        <InsideApp />
-        <CheckIn />
-        <Features />
-        <Buddies />
-        <Comparison />
-        <Testimonials />
-        <Faq />
-        <Waitlist />
+    <div className="launch">
+      <header className="container launch-header">
+        <Link href="/" aria-label="GymBuddy home"><Logo /></Link>
+      </header>
+
+      <main className="container launch-grid" id="waitlist">
+        <div className="launch-copy">
+          <div className="hero-badge">
+            <span className="badge-dot" />
+            Coming soon to the App Store
+          </div>
+          <h1 className="launch-title">Lock your distractions.</h1>
+          <p className="launch-sub">
+            GymBuddy locks Instagram, TikTok and games on your gym days until you show up at the gym and prove it.
+          </p>
+          <ul className="launch-points">
+            {POINTS.map((p) => (
+              <li key={p.text}>
+                <span className={`launch-point-icon launch-point-icon--${p.tone}`}><Icon name={p.icon} size={16} /></span>
+                {p.text}
+              </li>
+            ))}
+          </ul>
+          <p className="launch-form-label">Get early access. We&rsquo;ll email you the day it launches.</p>
+          <WaitlistForm />
+          <p className="waitlist-note">No spam. Unsubscribe anytime.</p>
+        </div>
+        <div className="launch-visual">
+          <HeroIllustration />
+        </div>
       </main>
-      <Footer />
-    </>
+
+      <footer className="container launch-footer">
+        <span>&copy; 2026 GymBuddy</span>
+        <Link href="/privacy">Privacy</Link>
+        <a href="mailto:hello@gymbuddy.live">hello@gymbuddy.live</a>
+      </footer>
+    </div>
   );
 }
