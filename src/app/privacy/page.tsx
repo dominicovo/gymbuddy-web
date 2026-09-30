@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
+import { SHARE_IMAGES } from '@/lib/site';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 // Plain-English privacy policy, written from what the app and site actually
 // do with data. Review with counsel before launch.
 
+const title = 'Privacy policy';
+const description = 'What GymBuddy collects, what stays on your iPhone, and how to delete your account.';
+
 export const metadata: Metadata = {
-  title: 'Privacy policy',
-  description: 'What GymBuddy collects, what stays on your iPhone, and how to delete your account.',
+  title,
+  description,
   alternates: { canonical: '/privacy' },
+  openGraph: { type: 'article', url: '/privacy', siteName: 'GymBuddy', title: `${title} | GymBuddy`, description, ...SHARE_IMAGES.openGraph },
+  twitter: { card: 'summary_large_image', title: `${title} | GymBuddy`, description, ...SHARE_IMAGES.twitter },
 };
 
 const UPDATED = '27 September 2026';

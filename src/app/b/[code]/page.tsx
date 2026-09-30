@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SHARE_IMAGES } from '@/lib/site';
 import Logo from '@/components/Logo';
 import { notFound } from 'next/navigation';
 import styles from './page.module.css';
@@ -23,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    openGraph: { title: `${title} | GymBuddy`, description },
-    twitter: { title: `${title} | GymBuddy`, description },
+    openGraph: { type: 'website', siteName: 'GymBuddy', title: `${title} | GymBuddy`, description, ...SHARE_IMAGES.openGraph },
+    twitter: { card: 'summary_large_image', title: `${title} | GymBuddy`, description, ...SHARE_IMAGES.twitter },
     // Every code is a personal invite — keep them out of search results.
     robots: { index: false, follow: false },
   };

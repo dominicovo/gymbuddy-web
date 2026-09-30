@@ -1,24 +1,24 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const APP_URL = 'https://www.gymbuddy.live';
   const lastModified = new Date();
 
   return [
     {
-      url: APP_URL,
+      url: `${SITE_URL}/`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${APP_URL}/support`,
+      url: `${SITE_URL}/support`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.4,
     },
     {
-      url: `${APP_URL}/privacy`,
+      url: `${SITE_URL}/privacy`,
       lastModified,
       changeFrequency: 'yearly',
       priority: 0.3,

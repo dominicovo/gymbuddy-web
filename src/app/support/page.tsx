@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SHARE_IMAGES } from '@/lib/site';
 import Link from 'next/link';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -6,10 +7,15 @@ import Footer from '@/components/Footer';
 // The App Store "Support URL". Answers what people actually get stuck on,
 // then how to reach a human.
 
+const title = 'Support';
+const description = 'Help with GymBuddy: locking apps, checking in, buddies, notifications and deleting your account.';
+
 export const metadata: Metadata = {
-  title: 'Support',
-  description: 'Help with GymBuddy: locking apps, checking in, buddies, notifications and deleting your account.',
+  title,
+  description,
   alternates: { canonical: '/support' },
+  openGraph: { type: 'website', url: '/support', siteName: 'GymBuddy', title: `${title} | GymBuddy`, description, ...SHARE_IMAGES.openGraph },
+  twitter: { card: 'summary_large_image', title: `${title} | GymBuddy`, description, ...SHARE_IMAGES.twitter },
 };
 
 const EMAIL = 'hello@gymbuddy.live';

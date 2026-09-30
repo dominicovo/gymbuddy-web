@@ -1,7 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Barlow_Condensed, Inter } from 'next/font/google';
 import './globals.css';
 import AnimationProvider from '@/components/AnimationProvider';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/site';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,36 +18,24 @@ const numerals = Barlow_Condensed({
   variable: '--font-numeric',
 });
 
-// www is the canonical host — the bare domain redirects to it.
-const APP_URL = 'https://www.gymbuddy.live';
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
+export const viewport: Viewport = {
+  themeColor: '#08070C',
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(APP_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'GymBuddy | Lock Distractions. Earn Your Freedom.',
+    default: SITE_TITLE,
     template: '%s | GymBuddy',
   },
-  description:
-    'GymBuddy locks Instagram, TikTok, and games until you physically show up at the gym and submit proof. The #1 app accountability app for people who keep skipping workouts. Join the waitlist today.',
-  keywords: [
-    'gym accountability app',
-    'app blocker gym',
-    'workout motivation app',
-    'lock apps until you workout',
-    'fitness accountability',
-    'screen time gym',
-    'GymBuddy app',
-    'block distracting apps',
-    'gym proof app',
-    'stop skipping gym',
-    'fitness discipline app',
-    'earn screen time',
-  ],
-  authors: [{ name: 'GymBuddy', url: APP_URL }],
-  creator: 'GymBuddy',
-  publisher: 'GymBuddy',
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   category: 'Health & Fitness',
-  applicationName: 'GymBuddy',
   referrer: 'origin-when-cross-origin',
   robots: {
     index: true,
@@ -60,91 +49,78 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: APP_URL,
+    canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: APP_URL,
-    siteName: 'GymBuddy',
-    title: 'GymBuddy | Lock Distractions. Earn Your Freedom.',
+    url: '/',
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
     description:
-      'GymBuddy locks Instagram, TikTok, and games until you physically prove you hit the gym. No excuses. Just results. Join the waitlist.',
+      'GymBuddy locks Instagram, TikTok and games on your gym days until you show up at the gym and prove it. Coming soon to the App Store.',
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@gymbuddyapp',
-    creator: '@gymbuddyapp',
-    title: 'GymBuddy | Lock Distractions. Earn Your Freedom.',
+    title: SITE_TITLE,
     description:
-      'Locks Instagram, TikTok, and games until you physically show up at the gym. No excuses. Just results.',
+      'Locks Instagram, TikTok and games on your gym days until you show up at the gym and prove it.',
   },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
     apple: '/apple-touch-icon.png',
   },
-  verification: {
-    google: 'google-site-verification-placeholder',
-  },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in Vercel to the token Search
+  // Console gives you (the content="…" part of its meta tag).
+  ...(googleVerification && { verification: { google: googleVerification } }),
 };
 
+// Structured data: tells Google the site's name is "GymBuddy" (shown above the
+// result instead of the domain) and ties the site, the organisation and the
+// iPhone app together as one brand.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': `${APP_URL}/#website`,
-      url: APP_URL,
-      name: 'GymBuddy',
-      description:
-        'GymBuddy locks your most distracting apps until you prove you hit the gym.',
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: `${APP_URL}/?q={search_term_string}`,
-        },
-        'query-input': 'required name=search_term_string',
+      '@id': `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: SITE_NAME,
+      alternateName: ['GymBuddy app', 'gymbuddy.live'],
+      description: SITE_DESCRIPTION,
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      email: 'hello@gymbuddy.live',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/gymbuddy-icon.png`,
+        width: 512,
+        height: 512,
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'hello@gymbuddy.live',
+        url: `${SITE_URL}/support`,
       },
     },
     {
       '@type': 'MobileApplication',
-      '@id': `${APP_URL}/#app`,
-      name: 'GymBuddy',
-      description:
-        'GymBuddy locks Instagram, TikTok, and games until you physically show up at the gym and submit proof. The ultimate gym accountability app.',
+      '@id': `${SITE_URL}/#app`,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
       applicationCategory: 'HealthApplication',
       operatingSystem: 'iOS',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-      },
-      url: APP_URL,
-      image: `${APP_URL}/og-image.png`,
-      publisher: {
-        '@type': 'Organization',
-        name: 'GymBuddy',
-        url: APP_URL,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${APP_URL}/gymbuddy-icon.png`,
-        },
-      },
-    },
-    {
-      '@type': 'Organization',
-      '@id': `${APP_URL}/#organization`,
-      name: 'GymBuddy',
-      url: APP_URL,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${APP_URL}/gymbuddy-icon.png`,
-        width: 512,
-        height: 512,
-      },
-      sameAs: ['https://twitter.com/gymbuddyapp'],
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/opengraph-image`,
+      publisher: { '@id': `${SITE_URL}/#organization` },
     },
   ],
 };
